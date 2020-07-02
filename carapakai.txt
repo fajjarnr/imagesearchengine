@@ -1,0 +1,4 @@
+1. buat env conda baru (conda create -n myenv pip python=3.7)
+2. aktivin env nya (activate myenv)
+3. instal reqruinment file (pip install -r requirements.txt)
+4. jalankan (python app.py)
