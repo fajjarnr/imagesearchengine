@@ -1,0 +1,64 @@
+{% extends "master.html" %} {% block body %}
+<div class="row">
+  <div class="col-9">
+    <div class="header mb-5">
+      <h1>Tugas Besar Temu Kembali Informasi</h1>
+    </div>
+    <form
+      method="POST"
+      enctype="multipart/form-data"
+      class="form-inline my-2 my-lg-0"
+    >
+      {{ form.csrf_token }} {{ form.query (class='form-control form-control
+      mr-sm-2', style='width:650px;', placeholder='Cari Gambar', type='search'
+      ,value='') }}
+      <button
+        class="btn btn-outline-success my-2 my-sm-0"
+        name="submit_button"
+        value="Submit"
+        type="submit"
+      >
+        Search
+      </button>
+    </form>
+    <div class="mt-5">
+      <tbody class="">
+        {% for df_id, df_nama, df_img in data_cari %}
+        <center>
+          <div class="card mb-3" style="width: 18rem;">
+            <img src="/static/{{df_img}}" class="card-img-top" alt="..." />
+            <div class="card-body bg-primary">
+              <h6 class="text-white">id : {{df_id}}</h6>
+              <h5 class="card-title text-white">Nama : {{df_nama}}</h5>
+            </div>
+          </div>
+        </center>
+        {% endfor %}
+      </tbody>
+    </div>
+  </div>
+  <div class="col-3 anggota">
+    <div class="card bg-primary shadow p-3 mb-5 rounded">
+      <div class="card-body text-white">
+        <h3>Anggota :</h3>
+        <ol type="1">
+          <li>
+            <strong class="text-warning">17102054</strong> DILLA FEBRIA ELISTY
+          </li>
+          <li>
+            <strong class="text-warning">17102175</strong> FAJAR NUR ROHMAN
+          </li>
+          <li>
+            <strong class="text-warning">16102008</strong> BACHTIAR GILANG
+            RAMADHAN
+          </li>
+          <li>
+            <strong class="text-warning">17102100</strong> CAHYANI AINUN
+            AWALIYAH
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
